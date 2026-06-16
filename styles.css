@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'Cormorant';
+    src: url('Cormorant.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Lora';
+    src: url('Lora.ttf') format('truetype');
+}
+* {
+    background-color: hsl(33, 14%, 10%);
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    overflow-x: hidden;
+}
+nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    padding: 15px;
+    background: radial-gradient(circle at center, hsl(33, 14%, 20%), hsl(33, 14%, 50%));
+    width: 120%;
+    margin-left: -5%;
+    height: 100px;
+}
+nav #nav-content {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: -10px;
+    padding-left: 5vw;
+    width: 100%;
+    height: 120px;
+    color: hsl(33, 14%, 50%);
+}
+#logo-container {
+    display: flex;
+    overflow: hidden;
+    height: 100px;
+}
+nav .logo {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    overflow: hidden;
+    object-fit: contain;
+    display: block;
+}
+#logo-container ::after{
+    border: 15px solid transparent;
+    backdrop-filter: blur(10px);
+    content: "";
+    pointer-events: none;
+    position: absolute;
+}
+nav h1 {
+    font-family: 'Cormorant', serif;
+    font-size: 2.0rem;
+    margin-left: 20px;
+    border-top: 2px solid hsl(33, 14%, 50%);
+    border-bottom: 2px solid hsl(33, 14%, 50%);
+    padding: 10px;
+}
+#menu-toggle {
+    display: none;
+}
+.menu-button span {
+    display: flex;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: radial-gradient(circle at center, hsl(33, 14%, 20%), hsl(33, 14%, 50%));
+
+}
+.nav-links {
+    width: 120%;
+    margin-top: 5px;
+    display:flex;
+    justify-content: left;
+    padding-left: 8vw;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    color: hsl(33, 14%, 50%);
+    background-color: #EFE0CD;
+    font-family: 'Lora', serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* background-color changed from #DED1C8. */
+.first-photo {
+    width: 80%;
+    height: auto;
+    margin-top: 10vw;
+}
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    background-color: #EFE0CD;
+}
+.overlay {
+    background-color:  hsl(34, 52%, 94%);
+    width: 80%;
+    align-self: center;
+    padding: 20px;
+
+}
+main h2 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    width: 90%;
+    color: hsl(8, 37%, 23%);
+    padding: 20px;
+    text-align: center;
+    text-decoration: underline hsl(8, 37%, 23%);
+    text-decoration-thickness: 3px;
+} 
+main p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    width: 80%;
+    text-align: left;
+    background-color: transparent;
+    color: hsl(8, 37%, 5%);
+}
+main .paragraph-image {
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 25px;
+    gap: 20px;
+    width: 80%;
+}
+main .paragraph-image img {
+    width: 200px;
+    height: auto;
+}
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    margin-top: 150px;
+        border-radius: 50%;
+    border: 5px solid hsl(33, 14%, 50%);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: hsl(33, 14%, 5%);
+    color: hsl(33, 14%, 50%);
+    height: 10%;
+    width: 120%;
+    margin-left: -10%;
+}
+footer p {
+    font-size: 1rem;
+    background-color: transparent;
+}
+@media (min-width: 768px) {
+    .menu-button {
+        display: none;
+    }
+    ul {
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+        background: none;
+        list-style: none;
+        background-color:#35281E;
+        height: 40px;
+    }
+    ul li {
+        background-color: transparent;
+        border-left: hsl(33, 14%, 50%) solid 2px; 
+        padding: 10px 20px 10px 20px;
+        margin-right: -20px;
+        transition: all 20s ease; 
+    }
+    ul li:last-child {
+        border-right: hsl(33,14%,50%) solid 2px;
+    }
+    ul li:hover {
+        background: linear-gradient(90deg, hsl(33,14%,50%),hsl(0, 0%, 45%));
+        cursor: pointer;
+    }
+    ul li:hover a {
+        color: hsl(360, 97%, 18%);
+    }
+    ul li a {
+        background-color: transparent;
+        text-decoration: none;
+        color: #EFE0CD;
+    }
+    main {
+        width: 70%;
+    }
+} 
