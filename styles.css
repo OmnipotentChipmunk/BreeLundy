@@ -16,31 +16,41 @@ html {
 }
 nav {
     position: fixed;
-    top: 0;
+    top: -20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     padding: 15px;
     background: radial-gradient(circle at center, hsl(33, 14%, 20%), hsl(33, 14%, 50%));
-    width: 120%;
-    margin-left: -5%;
-    height: 100px;
+    width: 121vw;
+    margin-left: -5vw;
+    height: 15%;
 }
-nav #nav-content {
+nav #nav-content{
     display: flex;
-    justify-content: left;
-    align-items: center;
-    margin-top: -10px;
+    justify-content: space-between;
+    margin-top: 10px;
     padding-left: 5vw;
     width: 100%;
-    height: 120px;
+    height: 100%;
     color: hsl(33, 14%, 50%);
 }
+nav #nav-content #left {
+    display: inline-flex;
+}
+nav #nav-content #right {
+    display: inline-flex;
+    background-color: hsl(33, 14%, 10%);
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-left: solid 1px hsl(33,14%,50%);
+}
 #logo-container {
-    display: flex;
+    display: inline-flex;
     overflow: hidden;
-    height: 100px;
 }
 nav .logo {
     width: auto;
@@ -61,30 +71,69 @@ nav .logo {
 }
 nav h1 {
     font-family: 'Cormorant', serif;
-    font-size: 2.0rem;
-    margin-left: 20px;
+    font-size: 2.0em;
+    margin-top: 30px;
+    height: 50px;
+    width: 200px;
+    padding-right: 20vw;
+    /*
     border-top: 2px solid hsl(33, 14%, 50%);
     border-bottom: 2px solid hsl(33, 14%, 50%);
-    padding: 10px;
+    */
 }
 #menu-toggle {
-    display: none;
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 1px;
+    opacity: 0%;
 }
-.menu-button span {
+.menu-btn {
     display: flex;
+    width: 30px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 3;
+    background-color: inherit;
+    cursor: pointer;
+}
+.menu-btn span {
+    display: block;
     position: relative;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background: radial-gradient(circle at center, hsl(33, 14%, 20%), hsl(33, 14%, 50%));
+    width: 30px;
+    height: 5px;
+    margin: 0px auto;
+    background: radial-gradient(circle at center, hsl(33, 14%, 30%), hsl(33, 14%, 50%));
 
 }
 .nav-links {
-    width: 120%;
-    margin-top: 5px;
-    display:flex;
-    justify-content: left;
-    padding-left: 8vw;
+    position: fixed;
+    top: 18vh;
+    height: 100vh;
+    right: -1500px;
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    list-style: none;
+    text-align: center;
+    z-index: 2;
+    background-color: #35281E;
+}
+.nav-links li {
+    margin-top: 15px;
+    width: 100%;
+    background-color: inherit;
+}
+.nav-links li a {
+    text-decoration: none;
+    background-color: inherit;
+    color: #EFE0CD;
+}
+#menu-toggle:checked ~ .nav-links{
+    right: 0px;
+    transition: all ease 2s;
 }
 main {
     display: flex;
@@ -95,8 +144,9 @@ main {
     color: hsl(33, 14%, 50%);
     background-color: #EFE0CD;
     font-family: 'Lora', serif;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
+    margin-top: 15vh;
 }
 /* background-color changed from #DED1C8. */
 .first-photo {
@@ -130,6 +180,20 @@ main h2 {
     text-align: center;
     text-decoration: underline hsl(8, 37%, 23%);
     text-decoration-thickness: 3px;
+}
+main .paragraph-image {
+    margin-top: -20px;
+    background-color: transparent;
+    padding: 25px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+main .paragraph-image img {
+    width: 250px;
+    height: auto;
+    float: left;
+    margin: 10px;
 } 
 main p {
     font-size: 1.2rem;
@@ -140,26 +204,11 @@ main p {
     background-color: transparent;
     color: hsl(8, 37%, 5%);
 }
-main .paragraph-image {
-    margin-top: -20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    padding: 25px;
-    gap: 20px;
-    width: 80%;
-}
-main .paragraph-image img {
-    width: 200px;
-    height: auto;
-}
 .profile-photo {
     width: 200px;
     height: 200px;
     margin-top: 150px;
-        border-radius: 50%;
+    border-radius: 50%;
     border: 5px solid hsl(33, 14%, 50%);
 }
 footer {
