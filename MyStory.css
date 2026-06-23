@@ -179,9 +179,16 @@ main {
     width: 80%;
     align-self: center;
     padding: 20px;
-
 }
-main .information-heading {
+.hero-image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto 40px auto;
+    object-fit: cover;
+}
+main h2 {
     display: block;
     font-size: 2.5rem;
     font-family: "Cormorant", "serif";
@@ -194,15 +201,6 @@ main .information-heading {
     text-decoration: underline hsl(8, 37%, 23%);
     text-decoration-thickness: 2.0px;
 }
-main img {
-    display: block;
-    width: 400px;
-    height: auto;
-    position: static;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-} 
 main p {
     font-size: 1.0rem;
     font-family: "Lora", "san-serif";
@@ -227,10 +225,24 @@ main p a {
     text-decoration: none;
     border: 1px solid hsl(8,37%,23%);
 }
+main h3 {
+    display: block;
+    font-size: 2.5rem;
+    font-family: "Cormorant", "serif";
+    margin: 80px auto 20px auto;
+    background-color: transparent;
+    width: 90%;
+    color: hsl(8, 37%, 23%);
+    padding: 20px;
+    text-align: center;
+    text-decoration: underline hsl(8, 37%, 23%);
+    text-decoration-thickness: 2.0px;
+}
 .logo-photo {
+    display: block;
     width: 200px;
     height: 200px;
-    margin-top: 150px;
+    margin: 150px auto 50px auto;
     border-radius: 50%;
     border: 5px solid hsl(8, 37%, 23%);
 }
@@ -257,9 +269,12 @@ main .contact-links li{
     margin-top: 45px;
 }
 main .contact-links li a {
+    display: inline-block;
+    max-width: 100%;
     padding: 15px;
     border-radius: 25px;
     font-family: "Lora","sans-serif";
+    font-size: 1.0rem;
     background-color: hsl(34,52%,78%);
     color: hsl(8,37%,23%);
 }
