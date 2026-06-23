@@ -201,7 +201,7 @@ main img {
     position: static;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 } 
 main p {
     font-size: 1.0rem;
@@ -213,6 +213,20 @@ main p {
     background-color: transparent;
     color: hsl(8, 37%, 5%);
 }
+main p a {
+    display: block;
+    width: fit-content;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border-radius: 25px;
+    font-family: "Lora","sans-serif";
+    background-color: hsl(34,52%,78%);
+    color: hsl(8,37%,23%);
+    text-decoration: none;
+    border: 1px solid hsl(8,37%,23%);
+}
 .logo-photo {
     width: 200px;
     height: 200px;
@@ -220,7 +234,7 @@ main p {
     border-radius: 50%;
     border: 5px solid hsl(8, 37%, 23%);
 }
-main h3 {
+main .contact-link-heading {
     text-align: center; 
     font-family: "Cormorant", "serif";
     font-size: 2.0rem;
@@ -236,14 +250,21 @@ main .contact-links {
     text-align: center;
     background-color: transparent;
     padding-top: 35px;
+    margin-bottom: 150px;
 }
 main .contact-links li{
     background-color: transparent;
-    margin-top: 3px;
+    margin-top: 45px;
 }
 main .contact-links li a {
-    background-color: transparent;
-    color: hsl(8,37%,23%)
+    display: inline-block;
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    font-family: "Lora","sans-serif";
+    font-size: 1.0rem;
+    background-color: hsl(34,52%,78%);
+    color: hsl(8,37%,23%);
 }
 footer {
     text-align: center;
@@ -321,5 +342,3 @@ footer p {
         max-width: 70%;
     }
 } 
-
-
