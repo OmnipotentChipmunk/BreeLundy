@@ -1,3 +1,12 @@
+:root {
+    --cream: hsl(34, 52%, 94%);
+    --warm-paper: hsl(35,45%,88%);
+    --espresso: hsl(28, 22%, 16%);
+    --soft-espresso: hsl(28,18%,24%);
+    --wine: hsl(8,37%, 23%);
+    --gold: hsl(40, 35%, 65%);
+    --muted-gold: hsla(40,35%,65%,0.45);
+}
 @font-face {
     font-family: 'Cormorant';
     src: url('Cormorant.ttf') format('truetype');
@@ -7,17 +16,21 @@
     src: url('Lora.ttf') format('truetype');
 }
 * {
-    background-color: hsl(33, 14%, 10%);
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 html {
+    background-color: hsl(33, 14%, 85%);
     overflow-x: hidden;
 }
 body {
     overflow-x: hidden;
     width: 100%;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    background-color: var(--cream);
+    color: var(--espresso);
 }
 nav {
     position: fixed;
@@ -27,16 +40,14 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 6px 14px;
-    background-color: hsl(33,14%,10%);
+    background-color: var(--espresso);
     width: 100%;
     box-sizing: border-box;
     min-height: 70px;
     height: auto;
-    border-top: 1px solid hsl(40,35%, 65%);
-    border-bottom: 1px solid hsl(40, 35%, 65%);
-    box-shadow: 
-        inset 0 1px 0 hsla(40,60%,80%,0.35),
-        inset 0 -1px 0 hsla(40,60%,80%,0.25);
+    border-bottom: 1px solid var(--muted-gold);
+    box-shadow: 0 2px 12px hsla(28,22%,10%,0.18);
+    z-index: 50;
 }
 nav #nav-content{
     display: flex;
@@ -54,7 +65,6 @@ nav #nav-content #left {
 }
 nav #nav-content #right {
     display: inline-flex;
-    background-color: hsl(33, 14%, 10%);
     width: auto;
     height: 100%;
     align-items: center;
@@ -78,22 +88,16 @@ nav .logo {
     object-fit: contain;
     display: block;
 }
-#logo-container ::after{
-    border: 15px solid transparent;
-    backdrop-filter: blur(10px);
-    content: "";
-    pointer-events: none;
-    position: absolute;
-}
 nav h1 {
     font-family: 'Cormorant', serif;
-    font-size: 1.7em;
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    letter-spacing: 0.12em;
+    font-weight: 400;
     margin-top: 0;
     height: auto;
     width: auto;
     line-height: 1.05;
-    color: hsl(33, 20%, 75%);
-    border-left: 2px solid hsl(33,14%, 50%);
+    color: var(--cream);
     padding-left: 10px;
     /*
     border-top: 2px solid hsl(33, 14%, 50%);
@@ -127,15 +131,15 @@ nav h1 {
 }
 .nav-links {
     position: fixed;
-    top: 80px;
+    top: 70px;
     height: 100vh;
-    right: -3000px;
+    right: -100%;
     width: 100%;
     display: block;
     flex-direction: column;
     list-style: none;
     text-align: center;
-    z-index: 2;
+    z-index: 49;
     background-color: hsl(33, 14%, 8%);;
 }
 .nav-links li {
@@ -147,6 +151,7 @@ nav h1 {
     text-decoration: none;
     background-color: inherit;
     color: hsl(34, 52%, 78%);
+    font-size: 0.78rem;
 }
 #menu-toggle:checked ~ .nav-links{
     right: 0px;
@@ -158,57 +163,66 @@ main {
     align-items: center;
     justify-content: center;
     height: auto;
-    color: hsl(33, 14%, 50%);
-    background-color: #EFE0CD;
+    color: var(--espresso);
+    background-color: var(--cream);
     font-family: 'Lora', serif;
     margin-right: auto;
     margin-left: auto;
     margin-top: 100px;
 }
 /* background-color changed from #DED1C8. */
-#hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0px;
-    background-color: #EFE0CD;
-}
 .overlay {
-    background-color:  hsl(34, 52%, 94%);
-    width: 80%;
-    align-self: center;
-    padding: 20px;
-
+    background-color:  transparent;
+    width: min(92%, 1080px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: clamp(28px, 5vw, 72px);
+    padding: clamp(36px, 7vw, 96px);
 }
 main h2 {
     display: block;
-    font-size: 2.5rem;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -0.03em;
     font-family: "Cormorant", "serif";
     margin: 20px auto 20px auto;
     background-color: transparent;
     width: 90%;
-    color: hsl(8, 37%, 23%);
+    color: var(--wine);
     padding: 20px;
     text-align: center;
-    text-decoration: underline hsl(8, 37%, 23%);
-    text-decoration-thickness: 2.0px;
 }
-main img {
+main h2::after{
+    content: "";
     display: block;
-    width: 250px;
+    width: 64px;
+    height: 1px;
+    margin: 12px auto 36px;
+    background-color: var(--gold);
+}
+#hero-img {
+    gap: 0px;
+    background-color: #EFE0CD;
+    border-radius: 16px;
+    display: block;
+    width: min(100%, 1100px);
+    aspect-ratio: 16/10;
+    object-fit: cover;
     height: auto;
-    position: static;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-} 
+    position: static;  
+    margin: 48px auto;
+    box-shadow: 0 10px 24px hsla(28,22%,10%,0.16);
+}
 main p {
     font-size: 1.0rem;
     font-family: "Lora", "san-serif";
-    line-height: 1.5;
+    line-height: 1.7;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
     width: 100%;
+    max-width: 62ch;
     text-align: center;
     background-color: transparent;
     color: hsl(8, 37%, 5%);
@@ -216,32 +230,35 @@ main p {
 main p a {
     display: block;
     width: fit-content;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    border-radius: 25px;
-    font-family: "Lora","sans-serif";
-    background-color: hsl(34,52%,78%);
-    color: hsl(8,37%,23%);
+    margin: 50px auto 100px auto;
     text-decoration: none;
-    border: 1px solid hsl(8,37%,23%);
-}
-.logo-photo {
-    width: 200px;
-    height: 200px;
-    margin-top: 150px;
-    border-radius: 50%;
-    border: 5px solid hsl(8, 37%, 23%);
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-family: "Lora","sans-serif";
+    background-color: var(--espresso);
+    color: var(--cream);
+    border: 1px solid var(--espresso);
+    letter-spacing: 0.04em;
 }
 main .contact-link-heading {
+    margin-top: 158px;
+    line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -0.03em;
     text-align: center; 
     font-family: "Cormorant", "serif";
-    font-size: 2.0rem;
+    font-size: clamp(2.2rem, 5vw, 4rem);
     background-color: transparent;
-    color:hsl(8, 37%, 23%);
-    text-decoration: underline 2.0px hsl(8,37%,23%);
-
+    color: var(--wine);
+    letter-spacing: 0.02em;
+}
+main .contact-link-heading::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 1px;
+    margin: 12px auto 0;
+    background-color: var(--gold);
 }
 main .contact-links {
     list-style:none;
@@ -249,31 +266,35 @@ main .contact-links {
     font-size: 1.2rem;
     text-align: center;
     background-color: transparent;
-    padding-top: 35px;
-    margin-bottom: 150px;
+    padding-top: 20px;
+    margin-bottom: 48px;
 }
 main .contact-links li{
-    background-color: transparent;
-    margin-top: 45px;
+    margin-top: 18px;
 }
 main .contact-links li a {
     display: inline-block;
     max-width: 100%;
-    padding: 15px;
-    border-radius: 25px;
     font-family: "Lora","sans-serif";
     font-size: 1.0rem;
-    background-color: hsl(34,52%,78%);
-    color: hsl(8,37%,23%);
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-family: "Lora","sans-serif";
+    background-color: var(--espresso);
+    color: var(--cream);
+    border: 1px solid var(--espresso);
+    letter-spacing: 0.04em;
+    text-decoration: none;
 }
 footer {
     text-align: center;
     padding: 20px;
-    background-color: hsl(33, 14%, 5%);
-    color: hsl(34, 52%, 78%);
+    background-color: var(--espresso);
+    color: var(--cream);
     height: 10%;
     width: 100%;
-    margin-left: 0%;
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
 }
 footer p {
@@ -292,53 +313,133 @@ footer p {
 .footer-links li a {
     background-color: transparent;
     text-decoration: none;
-    color: hsl(34, 52%, 78%)
+    color: var(--cream);
 }
-@media (min-width: 768px) {
+@media(min-width: 768px) and (max-width: 1119px) {
+    main {
+        margin-top: 130px;
+        max-width: 82%;
+    }
+    .overlay {
+        width: min(88vw, 760px);
+        padding: clamp(32px, 5vw, 56px);
+    }
+    main h2 {
+        font-size: clamp(3rem, 8vw, 4.4rem);
+        padding: 0;
+        width: 100%;
+    }
+    #hero-img {
+        width: 100%;
+        max-width: 720px;
+        aspect-ratio: 16/9;
+        margin: 36px auto;
+    }
+    main .contact-link-heading {
+        margin-top: 72px;
+    }
+    main p a {
+        margin-bottom: 64px;
+    }
+}
+@media (min-width: 1120px) {
     .menu-btn {
         display: none;
     }
-
+nav {
+    overflow: visible;
+}
     .nav-links {
         position: absolute;
         align-self: stretch;
         display: flex;
+        top: 100%;
         left: 0;
         right: 0;
         flex-direction: row;
         background: none;
         list-style: none;
-        background-color:#35281E;
-        height: auto;
+        background-color:hsl(26, 28%, 22%);
+        height: 44px;
         padding-left: 90px;
     }
     .nav-links li {
         background-color: transparent;
-        border-left: hsl(33, 14%, 50%) solid 2px; 
-        padding: 10px 20px 10px 20px;
+        padding: 14px 22px;
         margin-right: 0px;
         margin-top: 0;
         width: auto;
         display: flex;
         align-items: center;
-        transition: background 1s ease; 
-    }
-    .nav-links li:last-child {
-        border-right: hsl(33,14%,50%) solid 2px;
     }
     .nav-links li:hover {
-        background: linear-gradient(90deg, hsl(33,14%,50%),hsl(0, 0%, 45%));
+        background: transparent;
         cursor: pointer;
     }
     .nav-links li:hover a {
-        color: hsl(360, 97%, 18%);
+        color: var(--gold);
     }
     .nav-links li a {
         background-color: transparent;
         text-decoration: none;
         color: #EFE0CD;
+        text-transform: uppercase;
     }
     main {
-        max-width: 70%;
+        margin-top: 130px;
+        max-width: 100%;
+    }
+    .overlay{
+        width: (90vw, 1180px);
+        padding: clamp(56px, 6vw, 96px);
+        display: grid;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 1.1fr);
+        grid-template-areas: 
+            "headline image"
+            "copy image"
+            "cta image"
+            "quote quote"
+            "contact contact";
+        column-gap: clamp(40px, 6vw, 96px);
+        align-items: center;
+    }
+    .description {
+        grid-area: copy;
+        text-align: left;
+        margin-left: 0;
+    }
+    main h2 {
+        grid-area: headline;
+        text-align: left;
+        width: 100%;
+        padding: 0;
+        margin: 0 0 28px;
+    }
+    main h2::after {
+        margin-left: 0;
+    }
+    #hero-img {
+        grid-area: image;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+    }
+    .quote{
+        grid-area: quote;
+        text-align: center;
+        margin-top: 72px;
+    }
+    .cta-row {
+        grid-area: cta;
+    }
+    main p a {
+        margin-left: 0;
+        margin-top: 18px;
+    }
+    .contact-link-heading,
+    .contact-links {
+        grid-column: 1/-1;
     }
 } 
