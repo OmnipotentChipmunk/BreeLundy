@@ -40,7 +40,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 6px 14px;
-    background-color: var(--espresso);
+    background-color: var(--cream);
     width: 100%;
     box-sizing: border-box;
     min-height: 70px;
@@ -97,7 +97,7 @@ nav h1 {
     height: auto;
     width: auto;
     line-height: 1.05;
-    color: var(--cream);
+    color: var(--espresso);
     padding-left: 10px;
     /*
     border-top: 2px solid hsl(33, 14%, 50%);
@@ -131,7 +131,7 @@ nav h1 {
 }
 .nav-links {
     position: fixed;
-    top: 70px;
+    top: 73px;
     height: 100vh;
     right: -100%;
     width: 100%;
@@ -140,7 +140,7 @@ nav h1 {
     list-style: none;
     text-align: center;
     z-index: 49;
-    background-color: hsl(33, 14%, 8%);;
+    background-color: var(--cream);
 }
 .nav-links li {
     margin-top: 15px;
@@ -150,8 +150,21 @@ nav h1 {
 .nav-links li a {
     text-decoration: none;
     background-color: inherit;
-    color: hsl(34, 52%, 78%);
+    color: var(--espresso);
     font-size: 0.78rem;
+}
+.nav-links li:hover {
+    background-color: var(--warm-paper);
+}
+.nav-links li:after {
+    content: "";
+    display: block;
+    width: 62px;
+    height: 1px;
+    margin-top: 12px;
+    background-color: var(--muted-gold);
+    margin-left: auto;
+    margin-right: auto;
 }
 #menu-toggle:checked ~ .nav-links{
     right: 0px;
@@ -186,20 +199,12 @@ main h2 {
     font-weight: 400;
     letter-spacing: -0.03em;
     font-family: "Cormorant", "serif";
-    margin: 20px auto 20px auto;
+    margin: 20px auto 60px auto;
     background-color: transparent;
     width: 90%;
     color: var(--wine);
     padding: 20px;
     text-align: center;
-}
-main h2::after{
-    content: "";
-    display: block;
-    width: 64px;
-    height: 1px;
-    margin: 12px auto 36px;
-    background-color: var(--gold);
 }
 #hero-img {
     gap: 0px;
@@ -211,48 +216,18 @@ main h2::after{
     object-fit: cover;
     height: auto;
     position: static;  
-    margin: 48px auto;
+    margin: 48px auto 48px auto;
     box-shadow: 0 10px 24px hsla(28,22%,10%,0.16);
 }
-
-main .articles-flex-list {
-    position: static;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    background-color: transparent;
+#hero-img:hover {
+    transform: scale(1.02);
+    transition: transform 0.5s ease;
 }
-main .articles-flex-list .article-item {
-    width: 300px;
-    height: auto;
-    overflow: hidden;
-    padding: 0;
-    border-radius: 15px;
-    border: 1px solid hsl(8, 37%, 23%);
-}
-main .article-item img{
-    display: block;
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    margin:0;
-}
-main .article-item p {
-    text-align:center;
-    margin: 0;
-    padding: 10px;
-    font-size: 1.15rem;
-    text-decoration: none;
-    background-color: hsl(33, 52%, 88%);
-    color: hsl(8,37%,23%);
-}
-
 main p {
     font-size: 1.0rem;
     font-family: "Lora", "san-serif";
     line-height: 1.7;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -270,10 +245,64 @@ main p a {
     padding: 14px 26px;
     border-radius: 999px;
     font-family: "Lora","sans-serif";
-    background-color: var(--espresso);
-    color: var(--cream);
-    border: 1px solid var(--espresso);
+    background-color: var(--gold);
+    color: var(--espresso);
+    border: 1px solid var(--gold);
     letter-spacing: 0.04em;
+}
+main p a:hover {
+    transform: translateY(-2px);
+    transition: transform 0.4s ease;
+}
+.quote {
+    font-family: "Cormorant", "serif";
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    text-align: center; 
+    background-color: transparent;
+    color: var(--wine);
+    margin-top: 72px;
+    margin-bottom: 108px;
+}
+
+main .articles-flex-list {
+    position: static;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+}
+main .articles-flex-list .article-item {
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 15px;
+}
+main .articles-flex-list .article-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px hsla(28,22%,10%,0.16);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+main .article-item img{
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin:0;
+}
+main .article-item p {
+    text-align:center;
+    margin: 0;
+    padding: 10px;
+    font-size: 1.15rem;
+    text-decoration: none;
+    background-color: hsl(33, 52%, 88%);
+    color: hsl(8,37%,23%);
 }
 main .contact-link-heading {
     margin-top: 158px;
@@ -296,6 +325,11 @@ main .contact-link-heading::after {
     background-color: var(--gold);
 }
 main .contact-links {
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     list-style:none;
     font-family: "Lora", "sans-serif";
     font-size: 1.2rem;
@@ -306,26 +340,51 @@ main .contact-links {
 }
 main .contact-links li{
     margin-top: 18px;
+    width: min(100%, 320px);
+    padding: 28px 24px 28px 24px;
+    border: 1px solid var(--muted-gold);
+    border-radius: 18px;
+    background-color: var(--warm-paper);
+}
+main .contact-links li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px hsla(28,22%,10%,0.16);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+main .contact-links li .label{
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: .15em;
+    color: var(--wine);
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+main .contact-links li .label::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 1px;
+    margin: 8px auto 0;
+    background-color: var(--gold);
 }
 main .contact-links li a {
     display: inline-block;
     max-width: 100%;
     font-family: "Lora","sans-serif";
-    font-size: 1.0rem;
-    padding: 14px 26px;
-    border-radius: 999px;
+    font-size: 0.95rem;
+    padding: 0px 26px 0px 26px;
     font-family: "Lora","sans-serif";
-    background-color: var(--espresso);
-    color: var(--cream);
-    border: 1px solid var(--espresso);
+    background-color: transparent;
+    color: var(--espresso);
     letter-spacing: 0.04em;
     text-decoration: none;
+    overflow-wrap: break-word;
 }
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--espresso);
-    color: var(--cream);
+    background-color: hsl(36,45%,91%);
+    color: var(--espresso);
     height: 10%;
     width: 100%;
     margin-left: auto;
@@ -348,7 +407,7 @@ footer p {
 .footer-links li a {
     background-color: transparent;
     text-decoration: none;
-    color: var(--cream);
+    color: var(--espresso);
 }
 @media(min-width: 768px) and (max-width: 1119px) {
     main {
@@ -394,9 +453,10 @@ nav {
         flex-direction: row;
         background: none;
         list-style: none;
-        background-color:hsl(26, 28%, 22%);
+        background-color: var(--cream);
         height: 44px;
         padding-left: 90px;
+        border-bottom: 1px solid var(--muted-gold);
     }
     .nav-links li {
         background-color: transparent;
@@ -417,15 +477,19 @@ nav {
     .nav-links li a {
         background-color: transparent;
         text-decoration: none;
-        color: #EFE0CD;
+        color: var(--espresso);
         text-transform: uppercase;
+    }
+    .nav-links li:after {
+        content: "";
+        display: none;
     }
     main {
         margin-top: 130px;
         max-width: 100%;
     }
     .overlay{
-        width: (90vw);
+        width: min(90vw, 1180px);
         padding: clamp(56px, 6vw, 96px);
         display: grid;
         grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 1.1fr);
@@ -453,12 +517,12 @@ nav {
     main h2::after {
         margin-left: 0;
     }
-    .articles-flex-list{
+    #hero-img {
         grid-area: image;
         width: 100%;
         max-width: none;
         margin: 0;
-        /*aspect-ratio: 4/5;*/
+        aspect-ratio: 4/5;
         object-fit: cover;
     }
     .quote{
@@ -468,6 +532,9 @@ nav {
     }
     .cta-row {
         grid-area: cta;
+    }
+    main p {
+        text-align: left;
     }
     main p a {
         margin-left: 0;
