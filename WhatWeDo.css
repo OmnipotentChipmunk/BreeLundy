@@ -40,7 +40,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 6px 14px;
-    background-color: var(--espresso);
+    background-color: var(--cream);
     width: 100%;
     box-sizing: border-box;
     min-height: 70px;
@@ -97,7 +97,7 @@ nav h1 {
     height: auto;
     width: auto;
     line-height: 1.05;
-    color: var(--cream);
+    color: var(--espresso);
     padding-left: 10px;
     /*
     border-top: 2px solid hsl(33, 14%, 50%);
@@ -131,7 +131,7 @@ nav h1 {
 }
 .nav-links {
     position: fixed;
-    top: 70px;
+    top: 73px;
     height: 100vh;
     right: -100%;
     width: 100%;
@@ -140,7 +140,7 @@ nav h1 {
     list-style: none;
     text-align: center;
     z-index: 49;
-    background-color: hsl(33, 14%, 8%);;
+    background-color: var(--gold);
 }
 .nav-links li {
     margin-top: 15px;
@@ -150,7 +150,7 @@ nav h1 {
 .nav-links li a {
     text-decoration: none;
     background-color: inherit;
-    color: hsl(34, 52%, 78%);
+    color: var(--espresso);
     font-size: 0.78rem;
 }
 #menu-toggle:checked ~ .nav-links{
@@ -235,9 +235,9 @@ main p a {
     padding: 14px 26px;
     border-radius: 999px;
     font-family: "Lora","sans-serif";
-    background-color: var(--espresso);
-    color: var(--cream);
-    border: 1px solid var(--espresso);
+    background-color: var(--gold);
+    color: var(--espresso);
+    border: 1px solid var(--gold);
     letter-spacing: 0.04em;
 }
 main .contact-link-heading {
@@ -261,6 +261,11 @@ main .contact-link-heading::after {
     background-color: var(--gold);
 }
 main .contact-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     list-style:none;
     font-family: "Lora", "sans-serif";
     font-size: 1.2rem;
@@ -271,26 +276,46 @@ main .contact-links {
 }
 main .contact-links li{
     margin-top: 18px;
+    width: min(100%, 320px);
+    padding: 20px 0px 20px 0px;
+    border: 1px solid var(--muted-gold);
+    border-radius: 18px;
+    background-color: var(--warm-paper);
+}
+main .contact-links li .label{
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: .15em;
+    color: var(--wine);
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+main .contact-links li .label::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 1px;
+    margin: 8px auto 0;
+    background-color: var(--gold);
 }
 main .contact-links li a {
     display: inline-block;
     max-width: 100%;
     font-family: "Lora","sans-serif";
-    font-size: 1.0rem;
-    padding: 14px 26px;
-    border-radius: 999px;
+    font-size: 0.95rem;
+    padding: 0px 26px 0px 26px;
     font-family: "Lora","sans-serif";
-    background-color: var(--espresso);
-    color: var(--cream);
-    border: 1px solid var(--espresso);
+    background-color: transparent;
+    color: var(--espresso);
     letter-spacing: 0.04em;
     text-decoration: none;
+    overflow-wrap: break-word;
 }
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--espresso);
-    color: var(--cream);
+    background-color: hsl(36,45%,91%);
+    color: var(--espresso);
     height: 10%;
     width: 100%;
     margin-left: auto;
@@ -313,7 +338,7 @@ footer p {
 .footer-links li a {
     background-color: transparent;
     text-decoration: none;
-    color: var(--cream);
+    color: var(--espresso);
 }
 @media(min-width: 768px) and (max-width: 1119px) {
     main {
@@ -359,7 +384,7 @@ nav {
         flex-direction: row;
         background: none;
         list-style: none;
-        background-color:hsl(26, 28%, 22%);
+        background-color: var(--gold);
         height: 44px;
         padding-left: 90px;
     }
@@ -382,7 +407,7 @@ nav {
     .nav-links li a {
         background-color: transparent;
         text-decoration: none;
-        color: #EFE0CD;
+        color: var(--espresso);
         text-transform: uppercase;
     }
     main {
@@ -390,7 +415,7 @@ nav {
         max-width: 100%;
     }
     .overlay{
-        width: (90vw, 1180px);
+        width: min(90vw, 1180px);
         padding: clamp(56px, 6vw, 96px);
         display: grid;
         grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 1.1fr);
